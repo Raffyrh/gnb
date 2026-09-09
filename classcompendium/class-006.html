@@ -3,15 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/globals.css" />
+    <title>Musician | Guts &amp; Blackpowder Compendium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital,wght@0,400;1,400&family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="css/globals.css?v=7" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <link rel="stylesheet" href="css/compendium.css?v=5" />
-    <title>Musician | Guts &amp; Blackpowder</title>
+    <link rel="stylesheet" href="css/compendium.css?v=8" />
   </head>
   <body>
-    <div class="page-wrapper">
+    <div class="page-wrapper support-dossier">
       <nav class="compendium-navbar" aria-label="Main navigation">
         <a href="../" class="navbar-brand" aria-label="Return to landing page">
           <svg width="22" height="15" viewBox="0 0 22 15" fill="none" class="navbar-flag" aria-hidden="true">
@@ -27,10 +30,43 @@
         </a>
       </nav>
 
-      <section class="compendium-title-section" aria-label="Class title">
-        <div class="compendium-subtitle">MUSICIAN</div>
-        <h1 class="compendium-heading">Class Details</h1>
-      </section>
+      <nav class="class-selector-nav" aria-label="Regiment selection">
+        <div class="class-selector-inner">
+          <span class="selector-label">REGIMENTS:</span>
+          <div class="class-selector-tabs">
+            <a href="class-001.html" class="selector-tab">
+              <span class="tab-code">001</span>
+              <span class="tab-name">LINE INFANTRY</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-002.html" class="selector-tab">
+              <span class="tab-code">002</span>
+              <span class="tab-name">OFFICER</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-003.html" class="selector-tab support-tab">
+              <span class="tab-code">003</span>
+              <span class="tab-name">SAPPER</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-004.html" class="selector-tab">
+              <span class="tab-code">004</span>
+              <span class="tab-name">SEAMAN</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-005.html" class="selector-tab support-tab">
+              <span class="tab-code">005</span>
+              <span class="tab-name">SURGEON</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-006.html" class="selector-tab active support-tab" aria-current="page">
+              <span class="tab-code">006</span>
+              <span class="tab-name">MUSICIAN</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </nav>
 
       <main class="wrapper-block" id="class-container" aria-label="Class details">
         <section class="class-section-wrapper" id="class-006" aria-labelledby="musician-title">
@@ -44,13 +80,15 @@
               </div>
               <p class="text-wrapper-2">REGISTRY CODE // 006</p>
             </header>
+
             <blockquote class="quote-box">
               <p class="p">
                 "Just as a modern company commander relies on his radio operator,
                 his Napoleonic counterpart depended on his drummers."
               </p>
               <cite class="text-wrapper-9">— Napoleonistyka</cite>
-                        </blockquote>
+            </blockquote>
+
             <div class="class-dossier-layout">
               <aside class="class-render-aside" aria-label="Musician Character Render">
                 <div class="class-render-card">
@@ -73,110 +111,105 @@
                     <span class="render-spec-subtitle">Regimental Morale &amp; Combat Fife</span>
                   </div>
                 </div>
+
+                <section class="block-equipment" aria-labelledby="musician-equipment">
+                  <div class="equipment-badge-header">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>REGIMENTAL ARMORY</span>
+                  </div>
+                  <h2 class="standard-issue" id="musician-equipment">STANDARD ISSUE EQUIPMENT</h2>
+                  <div class="equipment-tags">
+                    <span class="equipment-chip">Fife</span>
+                    <span class="equipment-chip">Sabre</span>
+                  </div>
+                </section>
               </aside>
-              <div class="details-grid">
-              <div class="div-2">
-                <section class="div-3" aria-labelledby="musician-description">
-                  <h2 class="text-wrapper-3" id="musician-description">
-                    DESCRIPTION
-                  </h2>
+
+              <div class="details-dossier">
+                <div class="dossier-row-pair">
+                  <section class="dossier-card" aria-labelledby="musician-description">
+                    <div class="card-header">
+                      <span class="card-tag">OPERATIONAL PROFILE</span>
+                      <h2 class="text-wrapper-3" id="musician-description">DESCRIPTION</h2>
+                    </div>
+                    <p class="text-wrapper-4">
+                      The Musician provides team-wide buffs. One of four primary support classes alongside Sapper, Surgeon, and Chaplain. Issued a Fife and Sabre.
+                    </p>
+                  </section>
+
+                  <section class="dossier-card" aria-labelledby="musician-mechanics">
+                    <div class="card-header">
+                      <span class="card-tag">COMBAT DOCTRINE</span>
+                      <h2 class="text-wrapper-3" id="musician-mechanics">GAMEPLAY MECHANICS</h2>
+                    </div>
+                    <p class="text-wrapper-4">
+                      Click metronome on Fife to the beat to provide 20% reload speed buff and 20% build speed buff to Sappers within 50 studs. Targeted more by Runners.
+                    </p>
+                  </section>
+                </div>
+
+                <section class="dossier-card card-subclasses" aria-labelledby="musician-subclasses">
+                  <div class="card-header">
+                    <span class="card-tag">REGIMENTAL BRANCHES</span>
+                    <h2 class="text-wrapper-3" id="musician-subclasses">SUB-CLASSES &amp; REGIMENTS</h2>
+                  </div>
                   <p class="text-wrapper-4">
-                    The Musician is a support class specializing in providing
-                    team-wide buffs. One of four primary support classes alongside
-                    Sapper, Surgeon, and Chaplain. Musicians are issued a Fife and
-                    a Sabre.
+                    Drummers and Buglers are subclasses with distinct instrument buffs (Bugle provides 100% damage boost after buildup).
                   </p>
                 </section>
-                <section
-                  class="block-equipment"
-                  aria-labelledby="musician-equipment"
-                >
-                  <h2 class="standard-issue" id="musician-equipment">
-                    STANDARD ISSUE EQUIPMENT
-                  </h2>
-                  <p class="text-wrapper-5">Fife, Sabre</p>
-                </section>
-                <section class="div-3" aria-labelledby="musician-subclasses">
-                  <h2 class="text-wrapper-3" id="musician-subclasses">
-                    SUB-CLASSES &amp; REGIMENTS
-                  </h2>
-                  <p class="text-wrapper-4">
-                    Drummers and Buglers are subclasses with different
-                    instrument-based abilities.
-                  </p>
-                </section>
-              </div>
-              <div class="div-2">
-                <section class="div-3" aria-labelledby="musician-mechanics">
-                  <h2 class="text-wrapper-3" id="musician-mechanics">
-                    GAMEPLAY MECHANICS
-                  </h2>
-                  <p class="text-wrapper-4">
-                    Encouraged to stay just behind the frontline. Must use the
-                    metronome on their Fife by clicking to the beat of the song to
-                    provide a status effect buff within a 50-stud radius. Default
-                    buff 'Fife Boost' provides 20% Reload Speed buff and 20%
-                    build/repair speed buff to Sappers. Targeted more by Runners
-                    while playing.
-                  </p>
-                </section>
-                <section class="block-tips" aria-labelledby="musician-tips">
-                  <h2 class="text-wrapper-3" id="musician-tips">
-                    TACTICAL SURVIVAL TIPS
-                  </h2>
-                  <ul class="div-3">
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Stay behind frontlines with Fife to help teammates reload.
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Use Drums or Bugle if planning to be on the frontlines.
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Bugle requires buildup by killing Zombies — provides 100%
-                        damage boost for 20 seconds.
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Use the class to its full potential to assist teammates.
-                      </p>
-                    </li>
-                  </ul>
-                </section>
-                <section class="block-trivia" aria-labelledby="musician-trivia">
-                  <h2 class="historical-trivia" id="musician-trivia">
-                    HISTORICAL TRIVIA
-                  </h2>
-                  <p class="text-wrapper-8">
-                    Originally named the Fifer, changed due to addition of
-                    bagpipes. Musicians sync automatically when near another
-                    playing Musician. They acted as signalers for Company Officers
-                    — drums signaled orders over the noise of battle.
-                  </p>
-                </section>
+
+                <div class="dossier-row-pair pair-bottom">
+                  <section class="dossier-card block-tips" aria-labelledby="musician-tips">
+                    <div class="card-header">
+                      <span class="card-tag">FIELD SURVIVAL DIRECTIVES</span>
+                      <h2 class="text-wrapper-3" id="musician-tips">TACTICAL SURVIVAL TIPS</h2>
+                    </div>
+                    <ul class="tips-list">
+                      <li class="tip-item">
+                        <span class="tip-badge">01</span>
+                        <p class="text-wrapper-7">Stay behind frontlines with Fife to accelerate team reload cycles.</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">02</span>
+                        <p class="text-wrapper-7">Select Drums or Bugle if taking active frontline combat roles.</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">03</span>
+                        <p class="text-wrapper-7">Bugle requires kills to charge — grants a massive 100% damage boost for 20s.</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">04</span>
+                        <p class="text-wrapper-7">Keep rhythm consistent to maintain unbroken aura uptime.</p>
+                      </li>
+                    </ul>
+                  </section>
+
+                  <section class="dossier-card block-trivia" aria-labelledby="musician-trivia">
+                    <div class="card-header">
+                      <span class="card-tag">WAR DISPATCH ARCHIVE</span>
+                      <h2 class="historical-trivia" id="musician-trivia">HISTORICAL TRIVIA</h2>
+                    </div>
+                    <p class="text-wrapper-8">
+                      Originally named Fifer. Musicians sync automatically when playing together and historically relayed company commander signals through cannon fire.
+                    </p>
+                  </section>
+                </div>
               </div>
             </div>
-          </div>
           </article>
         </section>
       </main>
 
       <nav class="class-nav" aria-label="Class navigation">
-        <a href="class-005.html" class="prev-button" aria-label="Go to previous class">
+        <a href="class-005.html" class="prev-button" aria-label="Go to previous class: Surgeon">
           <span aria-hidden="true">←</span>
           <span>PREVIOUS CLASS</span>
         </a>
         <p class="class-counter" id="counter" aria-label="Class counter">6 / 6</p>
-        <a href="class-001.html" class="next-button" aria-label="Go to first class">
+        <a href="class-001.html" class="next-button" aria-label="Go to first class: Line Infantry">
           <span>NEXT CLASS</span>
           <span aria-hidden="true">→</span>
         </a>

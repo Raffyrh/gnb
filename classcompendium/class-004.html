@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Seaman | Guts &amp; Blackpowder</title>
-    <link rel="stylesheet" href="css/globals.css" />
+    <title>Seaman | Guts &amp; Blackpowder Compendium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital,wght@0,400;1,400&family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="css/globals.css?v=7" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <link rel="stylesheet" href="css/compendium.css?v=5" />
+    <link rel="stylesheet" href="css/compendium.css?v=8" />
   </head>
   <body>
     <div class="page-wrapper">
@@ -27,10 +30,43 @@
         </a>
       </nav>
 
-      <section class="compendium-title-section" aria-label="Class title">
-        <div class="compendium-subtitle">SEAMAN</div>
-        <h1 class="compendium-heading">Class Details</h1>
-      </section>
+      <nav class="class-selector-nav" aria-label="Regiment selection">
+        <div class="class-selector-inner">
+          <span class="selector-label">REGIMENTS:</span>
+          <div class="class-selector-tabs">
+            <a href="class-001.html" class="selector-tab">
+              <span class="tab-code">001</span>
+              <span class="tab-name">LINE INFANTRY</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-002.html" class="selector-tab">
+              <span class="tab-code">002</span>
+              <span class="tab-name">OFFICER</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-003.html" class="selector-tab support-tab">
+              <span class="tab-code">003</span>
+              <span class="tab-name">SAPPER</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-004.html" class="selector-tab active" aria-current="page">
+              <span class="tab-code">004</span>
+              <span class="tab-name">SEAMAN</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-005.html" class="selector-tab support-tab">
+              <span class="tab-code">005</span>
+              <span class="tab-name">SURGEON</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-006.html" class="selector-tab support-tab">
+              <span class="tab-code">006</span>
+              <span class="tab-name">MUSICIAN</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </nav>
 
       <main class="wrapper-block" id="class-container" aria-label="Class details">
         <section class="class-section-wrapper" id="class-004" aria-labelledby="seaman-title">
@@ -44,11 +80,13 @@
               </div>
               <p class="text-wrapper-2">REGISTRY CODE // 004</p>
             </header>
+
             <blockquote class="quote-box">
               <p class="p">
                 "Defending against the past, even when it bites back."
               </p>
-                        </blockquote>
+            </blockquote>
+
             <div class="class-dossier-layout">
               <aside class="class-render-aside" aria-label="Seaman Character Render">
                 <div class="class-render-card">
@@ -71,111 +109,105 @@
                     <span class="render-spec-subtitle">Naval Blunderbuss Specialist</span>
                   </div>
                 </div>
+
+                <section class="block-equipment" aria-labelledby="seaman-equipment">
+                  <div class="equipment-badge-header">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>REGIMENTAL ARMORY</span>
+                  </div>
+                  <h2 class="standard-issue" id="seaman-equipment">STANDARD ISSUE EQUIPMENT</h2>
+                  <div class="equipment-tags">
+                    <span class="equipment-chip">Blunderbuss</span>
+                    <span class="equipment-chip">Sabre</span>
+                  </div>
+                </section>
               </aside>
-              <div class="details-grid">
-              <div class="div-2">
-                <section class="div-3" aria-labelledby="seaman-description">
-                  <h2 class="text-wrapper-3" id="seaman-description">
-                    DESCRIPTION
-                  </h2>
+
+              <div class="details-dossier">
+                <div class="dossier-row-pair">
+                  <section class="dossier-card" aria-labelledby="seaman-description">
+                    <div class="card-header">
+                      <span class="card-tag">OPERATIONAL PROFILE</span>
+                      <h2 class="text-wrapper-3" id="seaman-description">DESCRIPTION</h2>
+                    </div>
+                    <p class="text-wrapper-4">
+                      Seaman is an offensive class specializing in crowd control, utilizing firearms for massive close-quarters damage. Issued a Blunderbuss and Sabre.
+                    </p>
+                  </section>
+
+                  <section class="dossier-card" aria-labelledby="seaman-mechanics">
+                    <div class="card-header">
+                      <span class="card-tag">COMBAT DOCTRINE</span>
+                      <h2 class="text-wrapper-3" id="seaman-mechanics">GAMEPLAY MECHANICS</h2>
+                    </div>
+                    <p class="text-wrapper-4">
+                      Close-quarters spread weapon. Effective against large clusters at close range. Prioritize Shamblers and back up against dangerous Bombers.
+                    </p>
+                  </section>
+                </div>
+
+                <section class="dossier-card card-subclasses" aria-labelledby="seaman-subclasses">
+                  <div class="card-header">
+                    <span class="card-tag">REGIMENTAL BRANCHES</span>
+                    <h2 class="text-wrapper-3" id="seaman-subclasses">SUB-CLASSES &amp; REGIMENTS</h2>
+                  </div>
                   <p class="text-wrapper-4">
-                    Seaman (a.k.a. Irregular Trooper) is an offensive class
-                    specializing in crowd control, utilizing its firearms for
-                    large amounts of close-quarters damage. Seamen are issued a
-                    Blunderbuss and a Sabre.
+                    Grenadier — trades Blunderbuss for a Hand Mortar, an explosive grenade launcher with extreme range and detonation damage.
                   </p>
                 </section>
-                <section
-                  class="block-equipment"
-                  aria-labelledby="seaman-equipment"
-                >
-                  <h2 class="standard-issue" id="seaman-equipment">
-                    STANDARD ISSUE EQUIPMENT
-                  </h2>
-                  <p class="text-wrapper-5">Blunderbuss, Sabre</p>
-                </section>
-                <section class="div-3" aria-labelledby="seaman-subclasses">
-                  <h2 class="text-wrapper-3" id="seaman-subclasses">
-                    SUB-CLASSES &amp; REGIMENTS
-                  </h2>
-                  <p class="text-wrapper-4">
-                    Grenadier — trades Blunderbuss for a Hand Mortar, a grenade
-                    launcher with incredibly long range and high explosive damage.
-                  </p>
-                </section>
-              </div>
-              <div class="div-2">
-                <section class="div-3" aria-labelledby="seaman-mechanics">
-                  <h2 class="text-wrapper-3" id="seaman-mechanics">
-                    GAMEPLAY MECHANICS
-                  </h2>
-                  <p class="text-wrapper-4">
-                    Encouraged to be on the frontlines for close-quarters
-                    effectiveness. The Blunderbuss has high pellet count and high
-                    spread — effective against large clusters at close range but
-                    weaker at distance. Expected to prioritize Shamblers and back
-                    up against Bombers.
-                  </p>
-                </section>
-                <section class="block-tips" aria-labelledby="seaman-tips">
-                  <h2 class="text-wrapper-3" id="seaman-tips">
-                    TACTICAL SURVIVAL TIPS
-                  </h2>
-                  <ul class="div-3">
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        The Blunderbuss excels at clearing tight chokepoints,
-                        narrow doors, and dark corners.
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Best against hordes of Shamblers, less effective against
-                        single strong targets like the Cuirassier.
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Work directly with Musicians for reload speed buffs to
-                        minimize your downtime.
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Conserve your precious shots until Zombies are within
-                        close firing range for maximum damage.
-                      </p>
-                    </li>
-                  </ul>
-                </section>
-                <section class="block-trivia" aria-labelledby="seaman-trivia">
-                  <h2 class="historical-trivia" id="seaman-trivia">
-                    HISTORICAL TRIVIA
-                  </h2>
-                  <p class="text-wrapper-8">
-                    Formerly known as Navyman. Seamen were former sailors
-                    recruited as crew-members, issued Blunderbusses for
-                    close-quarters boarding actions on ships.
-                  </p>
-                </section>
+
+                <div class="dossier-row-pair pair-bottom">
+                  <section class="dossier-card block-tips" aria-labelledby="seaman-tips">
+                    <div class="card-header">
+                      <span class="card-tag">FIELD SURVIVAL DIRECTIVES</span>
+                      <h2 class="text-wrapper-3" id="seaman-tips">TACTICAL SURVIVAL TIPS</h2>
+                    </div>
+                    <ul class="tips-list">
+                      <li class="tip-item">
+                        <span class="tip-badge">01</span>
+                        <p class="text-wrapper-7">Excels at clearing tight chokepoints, narrow doors, and dark corners.</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">02</span>
+                        <p class="text-wrapper-7">Devastating vs Shambler hordes, less effective against single armored foes.</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">03</span>
+                        <p class="text-wrapper-7">Coordinate with Musicians for reload speed buffs to minimize downtime.</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">04</span>
+                        <p class="text-wrapper-7">Conserve shots until enemies are point-blank for maximum pellet impact.</p>
+                      </li>
+                    </ul>
+                  </section>
+
+                  <section class="dossier-card block-trivia" aria-labelledby="seaman-trivia">
+                    <div class="card-header">
+                      <span class="card-tag">WAR DISPATCH ARCHIVE</span>
+                      <h2 class="historical-trivia" id="seaman-trivia">HISTORICAL TRIVIA</h2>
+                    </div>
+                    <p class="text-wrapper-8">
+                      Formerly known as Navyman. Seamen were recruited sailors issued Blunderbusses for close-quarters naval boarding actions.
+                    </p>
+                  </section>
+                </div>
               </div>
             </div>
-          </div>
           </article>
         </section>
       </main>
 
       <nav class="class-nav" aria-label="Class navigation">
-        <a href="class-003.html" class="prev-button" aria-label="Go to previous class">
+        <a href="class-003.html" class="prev-button" aria-label="Go to previous class: Sapper">
           <span aria-hidden="true">←</span>
           <span>PREVIOUS CLASS</span>
         </a>
         <p class="class-counter" id="counter" aria-label="Class counter">4 / 6</p>
-        <a href="class-005.html" class="next-button" aria-label="Go to next class">
+        <a href="class-005.html" class="next-button" aria-label="Go to next class: Surgeon">
           <span>NEXT CLASS</span>
           <span aria-hidden="true">→</span>
         </a>

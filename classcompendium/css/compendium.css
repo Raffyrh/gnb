@@ -1,47 +1,59 @@
 /* ==========================================================================
    Class Compendium Layout & Component Styles
+   Guts & Blackpowder - Regimental Compendium
    ========================================================================== */
 
-/* Page Wrapper */
+/* Page Wrapper with offset for floating navbar */
 .page-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #0b0c0e;
+  padding-top: 86px;
+  background-color: var(--color-bg, #0b0c0e);
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(158, 27, 27, 0.12), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(20, 24, 30, 0.8), transparent 40%);
+  background-attachment: fixed;
+  color: var(--color-text-main, #f3f4f6);
+  box-sizing: border-box;
 }
 
-/* Compendium Navigation Bar */
+/* ==========================================================================
+   Compendium Floating Navigation Bar (Fixed Position)
+   ========================================================================== */
 .compendium-navbar {
-  width: min(1200px, calc(100% - 48px));
-  position: sticky;
+  position: fixed;
   top: 16px;
-  margin: 16px auto 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: min(1240px, calc(100% - 48px));
   display: flex;
   padding: 12px 28px;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(11, 12, 14, 0.82);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
+  background-color: rgba(13, 15, 18, 0.82);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.04), 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+  border-radius: 12px;
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   box-sizing: border-box;
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar-brand {
-  font-family: "Geist-Bold", Helvetica, sans-serif;
+  font-family: var(--font-sans, "Geist", sans-serif);
   font-weight: 700;
   color: #f3f4f6;
-  font-size: 14px;
-  letter-spacing: 0.1px;
+  font-size: 13px;
+  letter-spacing: 0.8px;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   transition: opacity 0.2s ease;
 }
 
@@ -54,79 +66,170 @@
   overflow: hidden;
   display: block;
   flex-shrink: 0;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
 .back-button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
-  background-color: rgba(158, 27, 27, 0.27);
-  border: 1px solid #dc2626;
-  border-radius: 4px;
+  padding: 8px 18px;
+  background-color: rgba(158, 27, 27, 0.2);
+  border: 1px solid rgba(220, 38, 38, 0.6);
+  border-radius: 6px;
   color: #f3f4f6;
-  font-family: "Geist-Bold", Helvetica, sans-serif;
+  font-family: var(--font-sans, "Geist", sans-serif);
   font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.13px;
+  font-size: 12px;
+  letter-spacing: 0.6px;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
 .back-button:hover {
-  background-color: rgba(158, 27, 27, 0.44);
+  background-color: rgba(220, 38, 38, 0.35);
   border-color: #ef4444;
-}
-
-/* Header / Title Section */
-.compendium-title-section {
-  width: 100%;
-  padding: 60px 80px;
-  background-color: #0b0c0e;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.compendium-subtitle {
-  color: #9ca3af;
-  font-family: "Geist", Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.compendium-heading {
-  color: #f3f4f6;
-  font-family: "DM Serif Text", serif;
-  font-size: 48px;
-  font-weight: 400;
-  margin-bottom: 16px;
-}
-
-.compendium-description {
-  color: #9ca3af;
-  font-family: "Geist", Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  max-width: 800px;
-  margin: 0 auto;
+  box-shadow: 0 0 16px rgba(220, 38, 38, 0.35);
 }
 
 /* ==========================================================================
-   Class Card & Details Grid
+   Top Class Quick-Selector Navigation
    ========================================================================== */
+.class-selector-nav {
+  width: min(1240px, calc(100% - 48px));
+  margin: 12px auto 0;
+  position: relative;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+}
 
+.class-selector-inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(17, 20, 24, 0.75);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  overflow-x: auto;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+
+.class-selector-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.selector-label {
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #6b7280;
+  text-transform: uppercase;
+  padding: 0 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.class-selector-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.selector-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 13px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #9ca3af;
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.selector-tab:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #f3f4f6;
+  transform: translateY(-1px);
+}
+
+.selector-tab.active {
+  background: rgba(158, 27, 27, 0.22);
+  border-color: rgba(220, 38, 38, 0.6);
+  color: #f3f4f6;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.selector-tab.active.support-tab {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.55);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.tab-code {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #6b7280;
+  padding: 1px 4px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 3px;
+}
+
+.selector-tab.active .tab-code {
+  color: #dfd5c6;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.tab-name {
+  font-weight: 700;
+}
+
+.tab-pip {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tab-pip.offensive-pip {
+  background-color: #dc2626;
+  box-shadow: 0 0 6px rgba(220, 38, 38, 0.7);
+}
+
+.tab-pip.support-pip {
+  background-color: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.7);
+}
+
+/* ==========================================================================
+   Main Dossier Container (Spacious & Compact)
+   ========================================================================== */
 .wrapper-block {
-  flex: 1;
-  background-color: #0b0c0e;
-  padding: 0 80px;
+  width: min(1240px, calc(100% - 48px));
+  margin: 16px auto 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   position: relative;
   box-sizing: border-box;
 }
@@ -134,212 +237,214 @@
 .wrapper-block .class-section-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  position: relative;
   align-self: stretch;
   width: 100%;
-  flex: 0 0 auto;
 }
 
 .wrapper-block .div {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 80px;
+  gap: 20px;
+  padding: 28px 32px;
   position: relative;
-  align-self: stretch;
   width: 100%;
-  flex: 0 0 auto;
-  background-color: #131518;
-  border-top: 1px solid #2c3136;
-  border-bottom: 1px solid #2c3136;
+  background: linear-gradient(180deg, #131518 0%, #0d0f12 100%);
+  border: 1px solid #252a30;
+  border-radius: 12px;
+  box-shadow: 0 16px 44px -8px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   box-sizing: border-box;
 }
 
+/* Identity Header Row */
 .wrapper-block .identity-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  align-self: stretch;
   width: 100%;
-  flex: 0 0 auto;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .wrapper-block .left {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
-  position: relative;
-  flex: 0 0 auto;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .wrapper-block .text-wrapper {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "DM Serif Text-Regular", Helvetica, serif;
+  font-family: var(--font-serif, "DM Serif Text", serif);
   font-weight: 400;
   color: #f3f4f6;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
+  font-size: 34px;
+  letter-spacing: 0.3px;
+  line-height: 1;
+  margin: 0;
 }
 
 .wrapper-block .role-tag {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   padding: 4px 10px;
-  position: relative;
-  flex: 0 0 auto;
-  background-color: rgba(158, 27, 27, 0.125);
-  border-radius: 2px;
-  border: 1px solid #9e1b1b;
+  background-color: rgba(158, 27, 27, 0.18);
+  border-radius: 4px;
+  border: 1px solid #dc2626;
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.25);
 }
 
 .wrapper-block .offensive-class {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Geist-ExtraBold", Helvetica, sans-serif;
+  font-family: var(--font-sans, "Geist", sans-serif);
   font-weight: 800;
-  color: #f3f4f6;
+  color: #ef4444;
   font-size: 11px;
-  letter-spacing: 0.17px;
+  letter-spacing: 0.8px;
   line-height: normal;
+  text-transform: uppercase;
 }
 
 .wrapper-block .support-class-wrapper {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   padding: 4px 10px;
-  position: relative;
-  flex: 0 0 auto;
-  background-color: rgba(16, 185, 129, 0.125);
-  border-radius: 2px;
+  background-color: rgba(16, 185, 129, 0.16);
+  border-radius: 4px;
   border: 1px solid #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
 }
 
 .wrapper-block .support-class {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Geist-ExtraBold", Helvetica, sans-serif;
+  font-family: var(--font-sans, "Geist", sans-serif);
   font-weight: 800;
   color: #10b981;
   font-size: 11px;
-  letter-spacing: 0.17px;
+  letter-spacing: 0.8px;
   line-height: normal;
+  text-transform: uppercase;
 }
 
 .wrapper-block .text-wrapper-2 {
-  position: relative;
-  width: fit-content;
-  font-family: "Geist-SemiBold", Helvetica, sans-serif;
-  font-weight: 600;
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-weight: 700;
   color: #9ca3af;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: normal;
-  margin-bottom: 0;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
 }
 
+/* Quote Box (Streamlined) */
 .wrapper-block .quote-box {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 0 0 24px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-  border-left: 3px solid #9e1b1b;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 18px;
+  background: rgba(18, 20, 25, 0.6);
+  border-left: 3px solid #dc2626;
+  border-radius: 0 6px 6px 0;
+  margin: 0;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.support-dossier .quote-box,
+.quote-box.support-quote {
+  border-left-color: #10b981;
 }
 
 .wrapper-block .p {
-  position: relative;
-  align-self: stretch;
-  margin-top: -3px;
-  margin-bottom: 0;
-  font-family: "DM Serif Text-Italic", Helvetica, serif;
+  margin: 0;
+  font-family: var(--font-serif, "DM Serif Text", serif);
   font-weight: 400;
   font-style: italic;
   color: #dfd5c6;
-  font-size: 20px;
-  letter-spacing: 0;
-  line-height: 28px;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  line-height: 24px;
+  display: inline;
+}
+
+.wrapper-block .text-wrapper-9 {
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+  font-style: normal;
+  letter-spacing: 0.4px;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 /* ==========================================================================
-   Class Dossier Layout & Character Render Showcase
+   Balanced 2-Column Dossier Layout
+   Left: Character Aside + Armament (~340px)
+   Right: Compact 2-Column Sub-Grid Dossier
    ========================================================================== */
-
 .class-dossier-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 48px;
-  position: relative;
-  align-self: stretch;
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
   width: 100%;
-  flex: 0 0 auto;
-  min-width: 0;
 }
 
+/* Left Column: Character Aside */
 .class-render-aside {
-  flex: 0 0 350px;
-  width: 350px;
-  position: sticky;
-  top: 92px;
   display: flex;
   flex-direction: column;
-  z-index: 10;
+  gap: 14px;
+  width: 100%;
 }
 
 .class-render-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #181b20 0%, #111316 100%);
-  border: 1px solid #2c3136;
-  border-radius: 8px;
-  padding: 20px;
+  background: linear-gradient(180deg, #171a1f 0%, #101215 100%);
+  border: 1px solid #272c33;
+  border-radius: 10px;
+  padding: 16px 18px;
   overflow: hidden;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .class-render-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 24px 48px -8px rgba(0, 0, 0, 0.88), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .render-glow {
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -20%);
-  width: 280px;
-  height: 360px;
+  transform: translate(-50%, -30%);
+  width: 220px;
+  height: 260px;
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(45px);
-  opacity: 0.55;
+  filter: blur(40px);
+  opacity: 0.5;
   z-index: 1;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .class-render-card:hover .render-glow {
-  opacity: 0.8;
-  transform: translate(-50%, -20%) scale(1.08);
+  opacity: 0.75;
+  transform: translate(-50%, -30%) scale(1.08);
 }
 
 .render-glow.offensive-glow {
-  background: radial-gradient(circle, rgba(220, 38, 38, 0.42) 0%, rgba(158, 27, 27, 0.15) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.45) 0%, rgba(158, 27, 27, 0.15) 55%, transparent 75%);
 }
 
 .render-glow.support-glow {
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.38) 0%, rgba(5, 150, 105, 0.12) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, rgba(5, 150, 105, 0.12) 55%, transparent 75%);
 }
 
 .render-spec-header {
@@ -348,25 +453,26 @@
   align-items: center;
   position: relative;
   z-index: 2;
-  padding-bottom: 12px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 6px;
 }
 
 .render-spec-id {
-  font-family: "Geist-Bold", Helvetica, sans-serif;
-  font-size: 11px;
-  letter-spacing: 1.5px;
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
   color: #9ca3af;
   text-transform: uppercase;
 }
 
 .render-spec-status {
-  font-family: "Geist-ExtraBold", Helvetica, sans-serif;
-  font-size: 10px;
-  letter-spacing: 1px;
-  padding: 3px 8px;
-  border-radius: 2px;
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  padding: 2px 7px;
+  border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.05);
   color: #dfd5c6;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -377,11 +483,11 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 440px;
+  height: 310px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 0;
+  padding: 4px 0;
 }
 
 .class-render-img {
@@ -393,25 +499,25 @@
   display: block;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.9));
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.9));
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
   user-select: none;
   -webkit-user-drag: none;
 }
 
 .class-render-card:hover .class-render-img {
-  transform: translateY(-6px) scale(1.03);
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.95));
+  transform: translateY(-3px) scale(1.02);
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.95));
 }
 
 .render-shadow {
   position: absolute;
-  bottom: 10px;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
   width: 75%;
-  height: 20px;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 75%);
+  height: 16px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 75%);
   border-radius: 50%;
   z-index: 1;
   pointer-events: none;
@@ -420,251 +526,318 @@
 .render-spec-footer {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   position: relative;
   z-index: 2;
-  padding-top: 14px;
+  padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 6px;
 }
 
 .render-spec-title {
-  font-family: "DM Serif Text-Regular", Helvetica, serif;
-  font-size: 19px;
+  font-family: var(--font-serif, "DM Serif Text", serif);
+  font-size: 17px;
   color: #f3f4f6;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 .render-spec-subtitle {
-  font-family: "Geist-Regular", Helvetica, sans-serif;
-  font-size: 12px;
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 11px;
   color: #9ca3af;
   letter-spacing: 0.2px;
 }
 
-.wrapper-block .details-grid {
-  display: flex;
-  align-items: flex-start;
-  gap: 48px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-  min-width: 0;
-}
-
-.class-dossier-layout .details-grid {
-  flex: 1;
-  min-width: 0;
-  width: auto;
-  gap: 36px;
-}
-
-.wrapper-block .div-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 28px;
-  position: relative;
-  flex: 1;
-  flex-grow: 1;
-  min-width: 0;
-}
-
-.wrapper-block .div-3 {
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.wrapper-block .text-wrapper-3 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "DM Serif Text-Regular", Helvetica, serif;
-  font-weight: 400;
-  color: #dfd5c6;
-  font-size: 18px;
-  letter-spacing: 0.18px;
-  line-height: normal;
-}
-
-.wrapper-block .text-wrapper-4 {
-  position: relative;
-  align-self: stretch;
-  font-family: "Geist-Regular", Helvetica, sans-serif;
-  font-weight: 400;
-  color: #9ca3af;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 24px;
-  overflow-wrap: break-word;
-  margin-bottom: 0;
-}
-
+/* Left Column: Standard Issue Equipment (Armory Block) */
 .wrapper-block .block-equipment {
-  gap: 12px;
-  padding: 20px;
-  background-color: #1e2226;
-  border-radius: 4px;
-  border: 1px solid #2c3136;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
+  gap: 8px;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, #181b20 0%, #131518 100%);
+  border-radius: 8px;
+  border: 1px solid #272c33;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   box-sizing: border-box;
 }
 
+.equipment-badge-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #dfd5c6;
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
 .wrapper-block .standard-issue {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Geist-ExtraBold", Helvetica, sans-serif;
+  font-family: var(--font-sans, "Geist", sans-serif);
   font-weight: 800;
-  color: #9e1b1b;
-  font-size: 12px;
-  letter-spacing: 0.18px;
-  line-height: normal;
+  color: #dc2626;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.support-dossier .standard-issue,
+.block-equipment.support-equipment .standard-issue {
+  color: #10b981;
 }
 
 .wrapper-block .text-wrapper-5 {
-  position: relative;
-  align-self: stretch;
-  font-family: "DM Serif Text-Regular", Helvetica, serif;
+  font-family: var(--font-serif, "DM Serif Text", serif);
   font-weight: 400;
   color: #f3f4f6;
-  font-size: 22px;
-  letter-spacing: 0;
-  line-height: normal;
-  overflow-wrap: break-word;
-  margin-bottom: 0;
+  font-size: 17px;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+  margin: 0;
 }
 
-.wrapper-block .block-tips {
-  gap: 12px;
+.equipment-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.equipment-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #f3f4f6;
+  letter-spacing: 0.2px;
+}
+
+/* ==========================================================================
+   Right Column: Compact Modular Dossier
+   ========================================================================== */
+.details-dossier {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  align-self: stretch;
+  gap: 14px;
   width: 100%;
-  flex: 0 0 auto;
+  min-width: 0;
 }
 
-.wrapper-block .block-tips .div-3 {
+/* 2-Card Row Grid for compact layout (No excessive vertical scrolling) */
+.dossier-row-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+}
+
+.dossier-row-pair.pair-bottom {
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+/* Dossier Modular Cards */
+.dossier-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px;
+  background: rgba(18, 21, 26, 0.65);
+  border: 1px solid #23272e;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.dossier-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-tag {
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #dfd5c6;
+  text-transform: uppercase;
+}
+
+.wrapper-block .text-wrapper-3 {
+  font-family: var(--font-serif, "DM Serif Text", serif);
+  font-weight: 400;
+  color: #f3f4f6;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  line-height: normal;
+  margin: 0;
+}
+
+.wrapper-block .text-wrapper-4 {
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-weight: 400;
+  color: #a0a6b1;
+  font-size: 13.5px;
+  letter-spacing: 0.1px;
+  line-height: 22px;
+  margin: 0;
+}
+
+/* Sub-classes Banner Card */
+.card-subclasses {
+  background: rgba(25, 28, 35, 0.45);
+  border-color: rgba(255, 255, 255, 0.09);
+  padding: 12px 18px;
+}
+
+/* Tactical Survival Directives (Tips) */
+.wrapper-block .block-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 20px;
+  background: rgba(18, 21, 26, 0.7);
+  border: 1px solid #272d36;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.tips-list {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: transparent;
+  border: none;
 }
 
 .wrapper-block .tip-item {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
+  gap: 10px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 5px;
+  transition: all 0.2s ease;
 }
 
+.wrapper-block .tip-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.tip-badge,
 .wrapper-block .text-wrapper-6 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "DM Serif Text-Regular", Helvetica, serif;
-  font-weight: 400;
-  color: #9e1b1b;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: normal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 3px;
+  background-color: rgba(158, 27, 27, 0.2);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  color: #f87171;
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.support-dossier .tip-badge,
+.support-dossier .wrapper-block .text-wrapper-6 {
+  background-color: rgba(16, 185, 129, 0.16);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
 }
 
 .wrapper-block .text-wrapper-7 {
-  position: relative;
   flex: 1;
-  margin-top: -1px;
-  margin-bottom: 0;
-  font-family: "Geist-Regular", Helvetica, sans-serif;
+  margin: 0;
+  font-family: var(--font-sans, "Geist", sans-serif);
   font-weight: 400;
-  color: #9ca3af;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 21px;
-  overflow-wrap: break-word;
+  color: #a0a6b1;
+  font-size: 13px;
+  letter-spacing: 0.1px;
+  line-height: 19px;
 }
 
+/* Historical War Dispatch / Trivia Card */
 .wrapper-block .block-trivia {
-  gap: 10px;
-  padding: 20px;
-  border-radius: 4px;
-  border: 1px solid #2c3136;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 8px;
+  padding: 16px 20px;
+  background: rgba(20, 22, 26, 0.5);
+  border: 1px dashed rgba(223, 213, 198, 0.25);
+  border-radius: 8px;
   position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
   box-sizing: border-box;
 }
 
 .wrapper-block .historical-trivia {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "DM Serif Text-Regular", Helvetica, serif;
+  font-family: var(--font-serif, "DM Serif Text", serif);
   font-weight: 400;
-  color: #f3f4f6;
-  font-size: 16px;
-  letter-spacing: 0.16px;
+  color: #dfd5c6;
+  font-size: 15.5px;
+  letter-spacing: 0.3px;
   line-height: normal;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wrapper-block .historical-trivia::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #dfd5c6;
+  border-radius: 50%;
 }
 
 .wrapper-block .text-wrapper-8 {
-  position: relative;
-  align-self: stretch;
-  font-family: "Geist-Regular", Helvetica, sans-serif;
+  font-family: var(--font-sans, "Geist", sans-serif);
   font-weight: 400;
-  color: #9ca3af;
+  color: #949ca8;
   font-size: 13px;
-  letter-spacing: 0;
-  line-height: 20.8px;
-  overflow-wrap: break-word;
-  margin-bottom: 0;
-}
-
-.wrapper-block .text-wrapper-9 {
-  position: relative;
-  align-self: stretch;
-  font-family: "Geist-Regular", Helvetica, sans-serif;
-  font-weight: 400;
-  color: #9ca3af;
-  font-size: 13px;
-  letter-spacing: 0;
-  line-height: normal;
-  font-style: normal;
-  margin-bottom: 0;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+  margin: 0;
 }
 
 /* ==========================================================================
    Class Navigation Controls (Prev / Counter / Next)
    ========================================================================== */
-
 .class-nav {
-  padding: 40px 80px;
+  width: min(1240px, calc(100% - 48px));
+  margin: 16px auto 0;
+  padding: 12px 18px;
   display: flex;
-  gap: 40px;
-  justify-content: center;
+  gap: 14px;
+  justify-content: space-between;
   align-items: center;
-  background-color: #0b0c0e;
+  background: rgba(14, 16, 20, 0.7);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
   box-sizing: border-box;
 }
 
@@ -673,99 +846,104 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 12px 24px;
+  gap: 8px;
+  padding: 8px 18px;
   position: relative;
-  flex: 0 0 auto;
-  background-color: rgba(158, 27, 27, 0.27);
-  border-radius: 4px;
-  border: 1px solid #dc2626;
+  background-color: rgba(158, 27, 27, 0.2);
+  border-radius: 5px;
+  border: 1px solid rgba(220, 38, 38, 0.5);
   cursor: pointer;
-  font-family: "Geist-Bold", Helvetica, sans-serif;
+  font-family: var(--font-sans, "Geist", sans-serif);
   font-weight: 700;
   color: #f3f4f6;
-  font-size: 13px;
-  letter-spacing: 0.13px;
-  transition: all 0.2s ease;
+  font-size: 11.5px;
+  letter-spacing: 0.5px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 
 .class-nav a:hover {
-  background-color: rgba(158, 27, 27, 0.44);
+  background-color: rgba(220, 38, 38, 0.35);
   border-color: #ef4444;
+  box-shadow: 0 0 14px rgba(220, 38, 38, 0.35);
+  transform: translateY(-1px);
 }
 
 .class-nav .class-counter {
   background-color: transparent;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
   cursor: default;
-  padding: 12px 24px;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .class-nav .class-counter:hover {
   background-color: transparent;
-  border-color: #dc2626;
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: none;
 }
 
 /* ==========================================================================
-   Compendium Footer
+   Compendium Footer (Streamlined & Compact)
    ========================================================================== */
-
 .compendium-footer {
   width: 100%;
-  border-top: 3px solid #dc2626;
+  margin-top: 40px;
+  border-top: 2px solid rgba(220, 38, 38, 0.8);
   background-color: #0b0c0e;
 }
 
 .footer-content {
-  width: 100%;
-  padding: 60px 80px;
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 36px 20px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  background-color: rgba(19, 21, 24, 0.5);
+  gap: 16px;
+  text-align: center;
   box-sizing: border-box;
 }
 
 .footer-heading {
   color: #f3f4f6;
-  font-family: "DM Serif Text", serif;
-  font-size: 36px;
+  font-family: var(--font-serif, "DM Serif Text", serif);
+  font-size: 28px;
   font-weight: 400;
-  text-align: center;
+  margin: 0;
 }
 
 .footer-description {
   color: #9ca3af;
-  font-family: "Geist", Helvetica, sans-serif;
-  font-size: 14px;
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 13.5px;
   font-weight: 400;
-  text-align: center;
-  max-width: 600px;
+  max-width: 580px;
   margin: 0 auto;
-  line-height: 22px;
+  line-height: 20px;
 }
 
 .footer-buttons {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 4px;
 }
 
 .footer-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 12px 24px;
-  border-radius: 4px;
+  gap: 8px;
+  padding: 9px 20px;
+  border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-family: "Geist-Bold", Helvetica, sans-serif;
+  font-family: var(--font-sans, "Geist", sans-serif);
   font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.14px;
+  font-size: 12.5px;
+  letter-spacing: 0.4px;
   transition: all 0.2s ease;
 }
 
@@ -776,8 +954,9 @@
 }
 
 .footer-btn-primary:hover {
-  background-color: #b92525;
+  background-color: #dc2626;
   border-color: #ef4444;
+  box-shadow: 0 0 14px rgba(220, 38, 38, 0.4);
 }
 
 .footer-btn-secondary {
@@ -787,14 +966,15 @@
 }
 
 .footer-btn-secondary:hover {
-  background-color: rgba(77, 85, 97, 0.1);
-  border-color: #6b7684;
+  background-color: rgba(77, 85, 97, 0.15);
+  border-color: #9ca3af;
 }
 
 .footer-footer {
   width: 100%;
-  background-color: #000000;
-  padding: 40px 80px;
+  background-color: #07080a;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -803,16 +983,16 @@
 
 .footer-brand {
   color: #f3f4f6;
-  font-family: "Geist-Bold", Helvetica, sans-serif;
+  font-family: var(--font-sans, "Geist", sans-serif);
   font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.1px;
+  font-size: 12px;
+  letter-spacing: 0.8px;
 }
 
 .footer-copyright {
-  color: #6b7684;
-  font-family: "Geist", Helvetica, sans-serif;
-  font-size: 13px;
+  color: #6b7280;
+  font-family: var(--font-sans, "Geist", sans-serif);
+  font-size: 11.5px;
   font-weight: 400;
   margin: 0;
 }
@@ -820,111 +1000,102 @@
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
-
-@media (max-width: 1180px) {
+@media (max-width: 1080px) {
   .class-dossier-layout {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .class-render-aside {
-    flex: 0 0 auto;
-    width: 100%;
     max-width: 440px;
-    position: static;
-  }
-
-  .class-dossier-layout .details-grid {
-    width: 100%;
-  }
-}
-
-@media (max-width: 900px) {
-  .compendium-navbar {
-    width: calc(100% - 32px);
-    top: 12px;
-    margin: 12px auto 0;
-    padding: 12px 20px;
-  }
-
-  .compendium-title-section,
-  .wrapper-block,
-  .footer-content,
-  .footer-footer,
-  .class-nav {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  .wrapper-block .div {
-    padding: 48px 32px;
-  }
-
-  .wrapper-block .details-grid {
-    flex-direction: column;
-    gap: 32px;
-  }
-}
-
-@media (max-width: 640px) {
-  .class-render-aside {
-    max-width: 100%;
+    margin: 0 auto;
   }
 
   .render-image-container {
-    height: 360px;
+    height: 300px;
   }
 
-  .render-glow {
-    width: 220px;
-    height: 280px;
+  .dossier-row-pair,
+  .dossier-row-pair.pair-bottom {
+    grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding-top: 76px;
+  }
+
   .compendium-navbar {
-    width: calc(100% - 20px);
     top: 10px;
-    margin: 10px auto 0;
-    padding: 10px 16px;
-    border-radius: 10px;
+    width: calc(100% - 24px);
+    padding: 10px 18px;
   }
 
-  .compendium-title-section,
+  .class-selector-nav,
   .wrapper-block,
-  .footer-content,
-  .footer-footer,
-  .class-nav {
-    padding-left: 16px;
-    padding-right: 16px;
+  .class-nav,
+  .footer-content {
+    width: calc(100% - 24px);
   }
 
   .wrapper-block .div {
-    gap: 28px;
-    padding: 32px 16px;
-  }
-
-  .wrapper-block .identity-row {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .wrapper-block .left {
-    align-items: flex-start;
-    flex-wrap: wrap;
+    padding: 20px 16px;
+    gap: 16px;
   }
 
   .wrapper-block .text-wrapper {
-    font-size: 30px;
+    font-size: 26px;
+  }
+
+  .wrapper-block .identity-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .class-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .footer-footer {
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
     text-align: center;
   }
+}
 
-  .class-nav {
-    gap: 16px;
-    flex-wrap: wrap;
+@media (max-width: 480px) {
+  .page-wrapper {
+    padding-top: 72px;
+  }
+
+  .compendium-navbar {
+    top: 8px;
+    width: calc(100% - 16px);
+    padding: 8px 14px;
+  }
+
+  .class-selector-nav,
+  .wrapper-block,
+  .class-nav,
+  .footer-content {
+    width: calc(100% - 16px);
+  }
+
+  .render-image-container {
+    height: 250px;
+  }
+
+  .render-glow {
+    width: 180px;
+    height: 220px;
+  }
+
+  .class-nav a {
+    padding: 7px 12px;
+    font-size: 11px;
   }
 }

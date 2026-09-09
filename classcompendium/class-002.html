@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Officer | Guts &amp; Blackpowder</title>
-    <link rel="stylesheet" href="css/globals.css" />
+    <title>Officer | Guts &amp; Blackpowder Compendium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital,wght@0,400;1,400&family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="css/globals.css?v=7" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <link rel="stylesheet" href="css/compendium.css?v=5" />
+    <link rel="stylesheet" href="css/compendium.css?v=8" />
   </head>
   <body>
     <div class="page-wrapper">
@@ -27,10 +30,43 @@
         </a>
       </nav>
 
-      <section class="compendium-title-section" aria-label="Class title">
-        <div class="compendium-subtitle">OFFICER</div>
-        <h1 class="compendium-heading">Class Details</h1>
-      </section>
+      <nav class="class-selector-nav" aria-label="Regiment selection">
+        <div class="class-selector-inner">
+          <span class="selector-label">REGIMENTS:</span>
+          <div class="class-selector-tabs">
+            <a href="class-001.html" class="selector-tab">
+              <span class="tab-code">001</span>
+              <span class="tab-name">LINE INFANTRY</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-002.html" class="selector-tab active" aria-current="page">
+              <span class="tab-code">002</span>
+              <span class="tab-name">OFFICER</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-003.html" class="selector-tab support-tab">
+              <span class="tab-code">003</span>
+              <span class="tab-name">SAPPER</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-004.html" class="selector-tab">
+              <span class="tab-code">004</span>
+              <span class="tab-name">SEAMAN</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-005.html" class="selector-tab support-tab">
+              <span class="tab-code">005</span>
+              <span class="tab-name">SURGEON</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-006.html" class="selector-tab support-tab">
+              <span class="tab-code">006</span>
+              <span class="tab-name">MUSICIAN</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </nav>
 
       <main class="wrapper-block" id="class-container" aria-label="Class details">
         <section class="class-section-wrapper" id="class-002" aria-labelledby="officer-title">
@@ -44,12 +80,14 @@
               </div>
               <p class="text-wrapper-2">REGISTRY CODE // 002</p>
             </header>
+
             <blockquote class="quote-box">
               <p class="p">
                 "A couple of chaps were cheering because they got to legally
                 discharge their afflicted officer."
               </p>
-                        </blockquote>
+            </blockquote>
+
             <div class="class-dossier-layout">
               <aside class="class-render-aside" aria-label="Officer Character Render">
                 <div class="class-render-card">
@@ -72,113 +110,108 @@
                     <span class="render-spec-subtitle">Command &amp; Tactical Charge</span>
                   </div>
                 </div>
+
+                <section class="block-equipment" aria-labelledby="officer-equipment">
+                  <div class="equipment-badge-header">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>REGIMENTAL ARMORY</span>
+                  </div>
+                  <h2 class="standard-issue" id="officer-equipment">STANDARD ISSUE EQUIPMENT</h2>
+                  <div class="equipment-tags">
+                    <span class="equipment-chip">Pistol</span>
+                    <span class="equipment-chip">Officer's Sabre</span>
+                  </div>
+                </section>
               </aside>
-              <div class="details-grid">
-              <div class="div-2">
-                <section class="div-3" aria-labelledby="officer-description">
-                  <h2 class="text-wrapper-3" id="officer-description">
-                    DESCRIPTION
-                  </h2>
+
+              <div class="details-dossier">
+                <div class="dossier-row-pair">
+                  <section class="dossier-card" aria-labelledby="officer-description">
+                    <div class="card-header">
+                      <span class="card-tag">OPERATIONAL PROFILE</span>
+                      <h2 class="text-wrapper-3" id="officer-description">DESCRIPTION</h2>
+                    </div>
+                    <p class="text-wrapper-4">
+                      The Officer is an offensive class specializing in frontline
+                      support, capable of instigating high mobility and offensive
+                      buffs through its Charge ability. Officers are issued a Pistol
+                      and an Officer's Sabre.
+                    </p>
+                  </section>
+
+                  <section class="dossier-card" aria-labelledby="officer-mechanics">
+                    <div class="card-header">
+                      <span class="card-tag">COMBAT DOCTRINE</span>
+                      <h2 class="text-wrapper-3" id="officer-mechanics">GAMEPLAY MECHANICS</h2>
+                    </div>
+                    <p class="text-wrapper-4">
+                      Primary role is frontline support. The Officer's kit grants abilities that affect allies with significant offensive buffs after causing sufficient damage, plus exclusive access to Officer Callouts.
+                    </p>
+                  </section>
+                </div>
+
+                <section class="dossier-card card-subclasses" aria-labelledby="officer-subclasses">
+                  <div class="card-header">
+                    <span class="card-tag">REGIMENTAL BRANCHES</span>
+                    <h2 class="text-wrapper-3" id="officer-subclasses">SUB-CLASSES &amp; REGIMENTS</h2>
+                  </div>
                   <p class="text-wrapper-4">
-                    The Officer is an offensive class specializing in frontline
-                    support, capable of instigating high mobility and offensive
-                    buffs through its Charge ability. Officers are issued a Pistol
-                    and an Officer's Sabre.
+                    Cuirassier — grants protection buffs (Cuirass) when fighting Zombies but reduces firearm handling and walk speed.
                   </p>
                 </section>
-                <section
-                  class="block-equipment"
-                  aria-labelledby="officer-equipment"
-                >
-                  <h2 class="standard-issue" id="officer-equipment">
-                    STANDARD ISSUE EQUIPMENT
-                  </h2>
-                  <p class="text-wrapper-5">Pistol, Officer's Sabre</p>
-                </section>
-                <section class="div-3" aria-labelledby="officer-subclasses">
-                  <h2 class="text-wrapper-3" id="officer-subclasses">
-                    SUB-CLASSES &amp; REGIMENTS
-                  </h2>
-                  <p class="text-wrapper-4">
-                    Cuirassier — grants protection buffs (Cuirass) when fighting
-                    Zombies but reduces firearm handling and walk speed.
-                  </p>
-                </section>
-              </div>
-              <div class="div-2">
-                <section class="div-3" aria-labelledby="officer-mechanics">
-                  <h2 class="text-wrapper-3" id="officer-mechanics">
-                    GAMEPLAY MECHANICS
-                  </h2>
-                  <p class="text-wrapper-4">
-                    Primary role is to provide frontline support. The Officer's
-                    kit grants abilities that affect allies with significant
-                    offensive buffs — only usable after causing sufficient damage.
-                    Has exclusive access to Officer Callouts. The Pistol
-                    compensates low damage with quickdraw and fastest reload
-                    speed.
-                  </p>
-                </section>
-                <section class="block-tips" aria-labelledby="officer-tips">
-                  <h2 class="text-wrapper-3" id="officer-tips">
-                    TACTICAL SURVIVAL TIPS
-                  </h2>
-                  <ul class="div-3">
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Infantry benefits most from the Officer's Charge due to
-                        Pike and Bayonet synergy (500% damage buff).
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Multiple Officers can chain their Charges sequentially to
-                        extend the overall buff duration.
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Use Charge to help the team execute strategic retreats
-                        during tight choke maps like Leipzig or Catacombes de
-                        Paris.
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        The Pistol is highly efficient for quickly popping weak
-                        zombie types like Runners and Igniters.
-                      </p>
-                    </li>
-                  </ul>
-                </section>
-                <section class="block-trivia" aria-labelledby="officer-trivia">
-                  <h2 class="historical-trivia" id="officer-trivia">
-                    HISTORICAL TRIVIA
-                  </h2>
-                  <p class="text-wrapper-8">
-                    One of the first 5 classes. Class name changes dynamically
-                    based on the selected regiment. The detailed uniform assets
-                    represents the historical rank of Captain.
-                  </p>
-                </section>
+
+                <div class="dossier-row-pair pair-bottom">
+                  <section class="dossier-card block-tips" aria-labelledby="officer-tips">
+                    <div class="card-header">
+                      <span class="card-tag">FIELD SURVIVAL DIRECTIVES</span>
+                      <h2 class="text-wrapper-3" id="officer-tips">TACTICAL SURVIVAL TIPS</h2>
+                    </div>
+                    <ul class="tips-list">
+                      <li class="tip-item">
+                        <span class="tip-badge">01</span>
+                        <p class="text-wrapper-7">Infantry benefits most from Charge due to Pike and Bayonet synergy (500% damage buff).</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">02</span>
+                        <p class="text-wrapper-7">Multiple Officers can chain their Charges sequentially to extend buff duration.</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">03</span>
+                        <p class="text-wrapper-7">Use Charge for strategic team retreats on tight choke maps like Leipzig or Catacombes.</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">04</span>
+                        <p class="text-wrapper-7">The Pistol quickly pops weak zombie types like Runners and Igniters.</p>
+                      </li>
+                    </ul>
+                  </section>
+
+                  <section class="dossier-card block-trivia" aria-labelledby="officer-trivia">
+                    <div class="card-header">
+                      <span class="card-tag">WAR DISPATCH ARCHIVE</span>
+                      <h2 class="historical-trivia" id="officer-trivia">HISTORICAL TRIVIA</h2>
+                    </div>
+                    <p class="text-wrapper-8">
+                      One of the original 5 classes. The class name changes dynamically based on the selected regiment. The detailed uniform assets represent the historical rank of Captain.
+                    </p>
+                  </section>
+                </div>
               </div>
             </div>
-          </div>
           </article>
         </section>
       </main>
 
       <nav class="class-nav" aria-label="Class navigation">
-        <a href="class-001.html" class="prev-button" aria-label="Go to previous class">
+        <a href="class-001.html" class="prev-button" aria-label="Go to previous class: Line Infantry">
           <span aria-hidden="true">←</span>
           <span>PREVIOUS CLASS</span>
         </a>
         <p class="class-counter" id="counter" aria-label="Class counter">2 / 6</p>
-        <a href="class-003.html" class="next-button" aria-label="Go to next class">
+        <a href="class-003.html" class="next-button" aria-label="Go to next class: Sapper">
           <span>NEXT CLASS</span>
           <span aria-hidden="true">→</span>
         </a>

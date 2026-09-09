@@ -3,15 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sapper | Guts &amp; Blackpowder</title>
-    <link rel="stylesheet" href="css/globals.css" />
+    <title>Sapper | Guts &amp; Blackpowder Compendium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital,wght@0,400;1,400&family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="css/globals.css?v=7" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <link rel="stylesheet" href="css/compendium.css?v=5" />
+    <link rel="stylesheet" href="css/compendium.css?v=8" />
   </head>
   <body>
-    <div class="page-wrapper">
+    <div class="page-wrapper support-dossier">
       <nav class="compendium-navbar" aria-label="Main navigation">
         <a href="../" class="navbar-brand" aria-label="Return to landing page">
           <svg width="22" height="15" viewBox="0 0 22 15" fill="none" class="navbar-flag" aria-hidden="true">
@@ -27,10 +30,43 @@
         </a>
       </nav>
 
-      <section class="compendium-title-section" aria-label="Class title">
-        <div class="compendium-subtitle">SAPPER</div>
-        <h1 class="compendium-heading">Class Details</h1>
-      </section>
+      <nav class="class-selector-nav" aria-label="Regiment selection">
+        <div class="class-selector-inner">
+          <span class="selector-label">REGIMENTS:</span>
+          <div class="class-selector-tabs">
+            <a href="class-001.html" class="selector-tab">
+              <span class="tab-code">001</span>
+              <span class="tab-name">LINE INFANTRY</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-002.html" class="selector-tab">
+              <span class="tab-code">002</span>
+              <span class="tab-name">OFFICER</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-003.html" class="selector-tab active support-tab" aria-current="page">
+              <span class="tab-code">003</span>
+              <span class="tab-name">SAPPER</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-004.html" class="selector-tab">
+              <span class="tab-code">004</span>
+              <span class="tab-name">SEAMAN</span>
+              <span class="tab-pip offensive-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-005.html" class="selector-tab support-tab">
+              <span class="tab-code">005</span>
+              <span class="tab-name">SURGEON</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+            <a href="class-006.html" class="selector-tab support-tab">
+              <span class="tab-code">006</span>
+              <span class="tab-name">MUSICIAN</span>
+              <span class="tab-pip support-pip" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </nav>
 
       <main class="wrapper-block" id="class-container" aria-label="Class details">
         <section class="class-section-wrapper" id="class-003" aria-labelledby="sapper-title">
@@ -44,15 +80,15 @@
               </div>
               <p class="text-wrapper-2">REGISTRY CODE // 003</p>
             </header>
+
             <blockquote class="quote-box">
               <p class="p">
                 "After some losses, the Russian sappers were able to break in the
                 barricaded door; the soldiers rushed in."
               </p>
-              <cite class="text-wrapper-9"
-                >— Adjutant-General August Ludwig von Nositz</cite
-              >
-                        </blockquote>
+              <cite class="text-wrapper-9">— Adjutant-General August Ludwig von Nositz</cite>
+            </blockquote>
+
             <div class="class-dossier-layout">
               <aside class="class-render-aside" aria-label="Sapper Character Render">
                 <div class="class-render-card">
@@ -75,113 +111,107 @@
                     <span class="render-spec-subtitle">Fortification Engineering</span>
                   </div>
                 </div>
+
+                <section class="block-equipment" aria-labelledby="sapper-equipment">
+                  <div class="equipment-badge-header">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>REGIMENTAL ARMORY</span>
+                  </div>
+                  <h2 class="standard-issue" id="sapper-equipment">STANDARD ISSUE EQUIPMENT</h2>
+                  <div class="equipment-tags">
+                    <span class="equipment-chip">Build Hammer</span>
+                    <span class="equipment-chip">Heavy Axe</span>
+                  </div>
+                </section>
               </aside>
-              <div class="details-grid">
-              <div class="div-2">
-                <section class="div-3" aria-labelledby="sapper-description">
-                  <h2 class="text-wrapper-3" id="sapper-description">
-                    DESCRIPTION
-                  </h2>
+
+              <div class="details-dossier">
+                <div class="dossier-row-pair">
+                  <section class="dossier-card" aria-labelledby="sapper-description">
+                    <div class="card-header">
+                      <span class="card-tag">OPERATIONAL PROFILE</span>
+                      <h2 class="text-wrapper-3" id="sapper-description">DESCRIPTION</h2>
+                    </div>
+                    <p class="text-wrapper-4">
+                      The Sapper is a support class specializing in defensive
+                      fortifications. By default, Sappers are issued an Axe and a
+                      Hammer.
+                    </p>
+                  </section>
+
+                  <section class="dossier-card" aria-labelledby="sapper-mechanics">
+                    <div class="card-header">
+                      <span class="card-tag">COMBAT DOCTRINE</span>
+                      <h2 class="text-wrapper-3" id="sapper-mechanics">GAMEPLAY MECHANICS</h2>
+                    </div>
+                    <p class="text-wrapper-4">
+                      Versatile support during horde segments. The Axe boasts high damage and penetration. Fortifications give teammates time to reload and impede zombie advances.
+                    </p>
+                  </section>
+                </div>
+
+                <section class="dossier-card card-subclasses" aria-labelledby="sapper-subclasses">
+                  <div class="card-header">
+                    <span class="card-tag">REGIMENTAL BRANCHES</span>
+                    <h2 class="text-wrapper-3" id="sapper-subclasses">SUB-CLASSES &amp; REGIMENTS</h2>
+                  </div>
                   <p class="text-wrapper-4">
-                    The Sapper is a support class specializing in defensive
-                    fortifications. By default, Sappers are issued an Axe and a
-                    Hammer.
+                    Siege Engineer — uses Siege Engineer Armour for 66% physical and 50% explosive damage resistance, at the cost of slower building and movement.
                   </p>
                 </section>
-                <section
-                  class="block-equipment"
-                  aria-labelledby="sapper-equipment"
-                >
-                  <h2 class="standard-issue" id="sapper-equipment">
-                    STANDARD ISSUE EQUIPMENT
-                  </h2>
-                  <p class="text-wrapper-5">Build Hammer, Heavy Axe</p>
-                </section>
-                <section class="div-3" aria-labelledby="sapper-subclasses">
-                  <h2 class="text-wrapper-3" id="sapper-subclasses">
-                    SUB-CLASSES &amp; REGIMENTS
-                  </h2>
-                  <p class="text-wrapper-4">
-                    Siege Engineer — uses Siege Engineer Armour for 66% damage
-                    resistance from physical attacks and 50% explosive damage
-                    resistance, at the cost of slower construction and movement.
-                  </p>
-                </section>
-              </div>
-              <div class="div-2">
-                <section class="div-3" aria-labelledby="sapper-mechanics">
-                  <h2 class="text-wrapper-3" id="sapper-mechanics">
-                    GAMEPLAY MECHANICS
-                  </h2>
-                  <p class="text-wrapper-4">
-                    Very versatile in positioning. Best suited for defensive
-                    support during horde segments. The Axe boasts incredibly high
-                    damage and penetration compared to the Sabre. Defensive
-                    fortifications allow teammates time to reload and hinder
-                    zombie movement.
-                  </p>
-                </section>
-                <section class="block-tips" aria-labelledby="sapper-tips">
-                  <h2 class="text-wrapper-3" id="sapper-tips">
-                    TACTICAL SURVIVAL TIPS
-                  </h2>
-                  <ul class="div-3">
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Build with the team's betterment in mind. Keep exits clear
-                        so you don't trap survivors.
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Bombers destroy clustered fortifications instantly —
-                        separate your lines to avoid cascade failure.
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        You can deploy a maximum of 30 buildings per map, and 10
-                        per Sapper.
-                      </p>
-                    </li>
-                    <li class="tip-item">
-                      <span class="text-wrapper-6" aria-hidden="true">•</span>
-                      <p class="text-wrapper-7">
-                        Always repair fortifications during wave intermissions.
-                        Build near Musicians for Hammer speed boost.
-                      </p>
-                    </li>
-                  </ul>
-                </section>
-                <section class="block-trivia" aria-labelledby="sapper-trivia">
-                  <h2 class="historical-trivia" id="sapper-trivia">
-                    HISTORICAL TRIVIA
-                  </h2>
-                  <p class="text-wrapper-8">
-                    Sappers were traditionally recruited from the strongest,
-                    bravest men — specifically from Grenadier companies. Sappers
-                    were permitted not to shave to save time on campaigns.
-                    Originally, Marines could not be Sappers, but this was added
-                    in the Roscoff Update.
-                  </p>
-                </section>
+
+                <div class="dossier-row-pair pair-bottom">
+                  <section class="dossier-card block-tips" aria-labelledby="sapper-tips">
+                    <div class="card-header">
+                      <span class="card-tag">FIELD SURVIVAL DIRECTIVES</span>
+                      <h2 class="text-wrapper-3" id="sapper-tips">TACTICAL SURVIVAL TIPS</h2>
+                    </div>
+                    <ul class="tips-list">
+                      <li class="tip-item">
+                        <span class="tip-badge">01</span>
+                        <p class="text-wrapper-7">Keep exits clear when building so you don't accidentally trap survivors.</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">02</span>
+                        <p class="text-wrapper-7">Bombers destroy clustered barricades instantly — space your defensive lines.</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">03</span>
+                        <p class="text-wrapper-7">Deploy up to 30 structures per map, and 10 per individual Sapper.</p>
+                      </li>
+                      <li class="tip-item">
+                        <span class="tip-badge">04</span>
+                        <p class="text-wrapper-7">Repair during wave intermissions. Build near Musicians for Hammer speed buffs.</p>
+                      </li>
+                    </ul>
+                  </section>
+
+                  <section class="dossier-card block-trivia" aria-labelledby="sapper-trivia">
+                    <div class="card-header">
+                      <span class="card-tag">WAR DISPATCH ARCHIVE</span>
+                      <h2 class="historical-trivia" id="sapper-trivia">HISTORICAL TRIVIA</h2>
+                    </div>
+                    <p class="text-wrapper-8">
+                      Sappers were recruited from the strongest men in Grenadier companies and permitted to wear beards to save time on campaigns.
+                    </p>
+                  </section>
+                </div>
               </div>
             </div>
-          </div>
           </article>
         </section>
       </main>
 
       <nav class="class-nav" aria-label="Class navigation">
-        <a href="class-002.html" class="prev-button" aria-label="Go to previous class">
+        <a href="class-002.html" class="prev-button" aria-label="Go to previous class: Officer">
           <span aria-hidden="true">←</span>
           <span>PREVIOUS CLASS</span>
         </a>
         <p class="class-counter" id="counter" aria-label="Class counter">3 / 6</p>
-        <a href="class-004.html" class="next-button" aria-label="Go to next class">
+        <a href="class-004.html" class="next-button" aria-label="Go to next class: Seaman">
           <span>NEXT CLASS</span>
           <span aria-hidden="true">→</span>
         </a>
