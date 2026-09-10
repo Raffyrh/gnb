@@ -195,6 +195,8 @@
   flex-shrink: 0;
   flex-direction: column;
   background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
   justify-content: flex-end;
   background-image: url("../images/v7_20.png");
 }
